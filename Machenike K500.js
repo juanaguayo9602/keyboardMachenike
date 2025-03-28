@@ -22,6 +22,7 @@ export function ControllableParameters() {
 
 const vKeyPositions =[
 	[0, 0],	
+	[0, 1],
 	[0, 2],
 	[1, 4],
 	[1, 6],
