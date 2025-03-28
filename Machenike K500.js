@@ -143,7 +143,8 @@ const vKeyNames =
  'BACK', '|', 'ENTER', 'ON', 'DOWN', "Prtsc",
  "`", "DEL","PGUP", "PGDN", "RIGHT", "R_-",
  "R_/", "R_8", "R_5", "R_2", "R_0",
- "+", "R_*", "R_9", "R_6", "R_3", "."
+ "+", "R_*", "R_9", "R_6", "R_3", ".",
+ "ESC"
 ];
 
 
