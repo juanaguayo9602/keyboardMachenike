@@ -199,6 +199,12 @@ function grabColors(shutdown)
 		{
 			color = device.color(iPxX, iPxY);
 		}
+
+		    if (vKeyNames[iIdx] === "ESC") {
+		      console.log("Iluminando ESC");
+		      color = [255, 0, 0];
+		    }
+				
 		rgbdata[iIdx*3] = color[0];
 		rgbdata[iIdx*3 + 1] = color[1];
 		rgbdata[iIdx*3 + 2] = color[2];
