@@ -20,7 +20,8 @@ export function ControllableParameters() {
 	];
 }
 
-const vKeyPositions =[	
+const vKeyPositions =[
+	[0, 0],	
 	[0, 2],
 	[1, 4],
 	[1, 6],
