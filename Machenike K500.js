@@ -19,7 +19,6 @@ export function Documentation() {
 export function DeviceType() {
 	return "keyboard";
 }
-
 export function Size() { return [35, 11]; }
 export function DefaultPosition(){return [10, 100]; }
 export function DefaultScale(){return 12.0}
