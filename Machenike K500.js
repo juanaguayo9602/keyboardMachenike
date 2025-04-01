@@ -1,229 +1,115 @@
-/* 
-Time:2023/2/14
-Author: dangc
-*/
-
-export function Name() { return "Machenike K500"; }
-export function VendorId() { return 0x258A; }
-export function ProductId() { return 0x0049; }
-export function Publisher() { return "dangc"; }
-export function Documentation() { return "gettingstarted/srgbmods-net-info"; }
-export function Size() { return [35, 11]; }
-export function DefaultPosition(){return [10, 100]; }
-export function DefaultScale(){return 12.0}
+export function Name() {
+	return "Machenike K500 - B94";
+}
+export function Version() {
+	return "1.1.9";
+}
+export function VendorId() {
+	return 0x258a;
+}
+export function ProductId() {
+	return 0x0049;
+}
+export function Publisher() {
+	return "WhirlwindFX";
+}
+export function Documentation() {
+	return "qmk/srgbmods-qmk-firmware";
+}
+export function DeviceType() {
+	return "keyboard";
+}
+export function Size() {
+	return [21, 6];
+}
+export function DefaultPosition() {
+	return [10, 100];
+}
+export function DefaultScale() {
+	return 8.0;
+} // Corregido DefaultScal → DefaultScale
 
 export function ControllableParameters() {
 	return [
-		{"property":"shutdownColor", "group":"lighting", "label":"Shutdown Color", "min":"0", "max":"360", "type":"color", "default":"009bde"},
-		{"property":"LightingMode", "group":"lighting", "label":"Lighting Mode", "type":"combobox", "values":["Canvas", "Forced"], "default":"Canvas"},
-		{"property":"forcedColor", "group":"lighting", "label":"Forced Color", "min":"0", "max":"360", "type":"color", "default":"009bde"},
+		{
+			property: "shutdownMode",
+			group: "lighting",
+			label: "Shutdown Mode",
+			type: "combobox",
+			values: ["SignalRGB", "Hardware"],
+			default: "SignalRGB",
+		},
+		{
+			property: "shutdownColor",
+			group: "lighting",
+			label: "Shutdown Color",
+			type: "color",
+			default: "#000000",
+		},
+		{
+			property: "LightingMode",
+			group: "lighting",
+			label: "Lighting Mode",
+			type: "combobox",
+			values: ["Canvas", "Forced"],
+			default: "Canvas",
+		},
+		{
+			property: "forcedColor",
+			group: "lighting",
+			label: "Forced Color",
+			type: "color",
+			default: "#009bde",
+		},
 	];
 }
 
-const vKeyPositions =[
-	[0, 0],	
-	[0, 1],
-	[0, 2],
-	[1, 4],
-	[1, 6],
-	[2, 8],
-	[1, 10],
-	[2, 0],
-	[2, 2],
-	[3, 4],
-	[4, 6],
-	[4, 8],
-	[3, 10],
-	[4, 0],
-	[4, 2],
-	[5, 4],
-	[6, 6],
-	[7, 8],
-	[6, 10],
-	[6, 0],
-	[6, 2],
-	[7, 4],
-	[8, 6],
-	[9, 8],
-	[10, 10],
-	[8, 0],
-	[8, 2],
-	[9, 4],
-	[10, 6],
-	[11, 8],
-	[12, 10],
-	[10, 0],
-	[10, 2],
-	[11, 4],
-	[12, 6],
-	[13, 8],
-	[13, 10],
-	[13, 0],
-	[12, 2],
-	[13, 4],
-	[14, 6],
-	[15, 8],
-	[16, 10],
-	[15, 0],
-	[14, 2],
-	[15, 4],
-	[16, 6],
-	[17, 8],
-	[18, 10],
-	[17, 0],
-	[16, 2],
-	[17, 4],
-	[18, 6],
-	[19, 8],
-	[20, 10],
-	[19, 0],
-	[18, 2],
-	[19, 4],
-	[20, 6],
-	[21, 8],
-	[22, 10],
-	[22, 0],
-	[20, 2],
-	[21, 4],
-	[22, 6],
-	[23, 8],
-	[24, 10],
-	[24, 0],
-	[22, 2],
-	[23, 4],
-	[24, 6],
-	[25, 8],
-	[26, 2],
-	[26, 0],
-	[24, 2],
-	[25, 4],
-	[26, 6],
-	[26, 8],
-	[26, 10],
-	[28, 0],
-	[27, 2],
-	[28, 4],
-	[27, 6],
-	[28, 8],
-	[28, 10],
-	[30, 0],
-	[30, 2],
-	[30, 4],
-	[30, 6],
-	[30, 8],
-	[30, 10],
-	[32, 0],
-	[32, 2],
-	[32, 4],
-	[32, 6],
-	[32, 8],
-	[32, 10],
-	[34, 0],
-	[34, 2],
-	[34, 4],
-	[34, 6],
-	[34, 8],
-	[34, 10],
-];
-
-
-const vKeyNames = 
-['~','TAB', 'CAPS LOCK', 'SHIFT', 'Ctrl', 'NULL6',
- "1", 'Q', 'A', 'Z', 'WIN',  "F1",
- '2', 'W', 'S', 'X', 'ALT_R',"F2",
- '3', 'E','D', 'C',"NULL22", "F3",
- '4', 'R', 'F', 'V',"NULL27", "F4",
- '5', 'T', 'G', 'B', 'SPACE', "F5",
- '6', 'Y', 'H', 'N', "NULL39", "F6",
- '7', 'U', 'J', 'M', "NULL45", "F7",
- '8', 'I', 'K', '<', 'ALT_L', "F8",
- '9', 'O', 'L', '>', 'CTRL_L', "F9",
- '0', 'P', ';', '/','FN', "F10", 
-  '-', '[', '"', 'SHIFT_', "NULL69", "F11",
- "=", "]", "NULL73", "NULL74", "left", "F12",
- 'BACK', '|', 'ENTER', 'ON', 'DOWN', "Prtsc",
- "`", "DEL","PGUP", "PGDN", "RIGHT", "R_-",
- "R_/", "R_8", "R_5", "R_2", "R_0",
- "+", "R_*", "R_9", "R_6", "R_3", ".",
- "ESC"
-];
-
-
-export function LedNames() {
-	return vKeyNames;
-
-}
-
-export function LedPositions() {
-	return vKeyPositions;
+export function Initialize() {
+	requestFirmwareType();
+	requestQMKVersion();
+	requestSignalRGBProtocolVersion();
+	requestUniqueIdentifier();
+	requestTotalLeds();
+	effectEnable();
 }
 
 export function Render() {
 	sendColors();
-	
 }
 
-export function Shutdown() {
-
-}
-
-function sendColors(shutdown = false)
-{
-	let rgbdata = grabColors(shutdown);
-
-	let packet = [0x08,0x0a,0x7a,0x01,0x00,0x00,0x00];
-
-	packet = packet.concat(rgbdata);	
-	device.send_report(packet, 520)
-
-
-}
-function grabColors(shutdown) 
-{
-	let rgbdata = [];
-	for(let iIdx = 0; iIdx < vKeyPositions.length; iIdx++)
-	{
-		let iPxX = vKeyPositions[iIdx][0];
-		let iPxY = vKeyPositions[iIdx][1];
-		let color;
-
-		if(shutdown)
-		{
-			color = hexToRgb(shutdownColor);
+export function Shutdown(SystemSuspending) {
+	if (SystemSuspending) {
+		sendColors("#000000"); // Apagar luces en suspensión
+	} else {
+		if (shutdownMode === "SignalRGB") {
+			sendColors(shutdownColor);
+		} else {
+			effectDisable();
 		}
-		else if (LightingMode === "Forced")
-		{
-			color = hexToRgb(forcedColor);
-		}
-		else
-		{
-			color = device.color(iPxX, iPxY);
-		}
-
-		    if (vKeyNames[iIdx] === "ESC") {
-		      console.log("Iluminando ESC");
-		      color = [255, 0, 0];
-		    }
-				
-		rgbdata[iIdx*3] = color[0];
-		rgbdata[iIdx*3 + 1] = color[1];
-		rgbdata[iIdx*3 + 2] = color[2];
 	}
-	return rgbdata;
-}
-function hexToRgb(hex) 
-{
-	let result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-	let colors = [];
-	colors[0] = parseInt(result[1], 16);
-	colors[1] = parseInt(result[2], 16);
-	colors[2] = parseInt(result[3], 16);
-
-	return colors;
 }
 
-export function Validate(endpoint) {
-	return endpoint.interface === 1 && endpoint.usage === 0x0001 && endpoint.usage_page === 0xff00;
+function hexToRgb(hex) {
+	const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+	return result ? [
+		parseInt(result[1], 16),
+		parseInt(result[2], 16),
+		parseInt(result[3], 16)
+	] : [0, 0, 0];
+} // Se optimizó para manejar posibles valores inválidos
+
+function sendColors(overrideColor) {
+	const rgbdata = overrideColor ? createSolidColorArray(hexToRgb(overrideColor)) : grabColors();
+	const LedsPerPacket = 9;
+	let BytesSent = 0;
+	let BytesLeft = rgbdata.length;
+
+	while (BytesLeft > 0) {
+		const BytesToSend = Math.min(LedsPerPacket * 3, BytesLeft);
+		StreamLightingData(Math.floor(BytesSent / 3), rgbdata.splice(0, BytesToSend));
+		BytesLeft -= BytesToSend;
+		BytesSent += BytesToSend;
+	}
 }
 
 export function Image() {
