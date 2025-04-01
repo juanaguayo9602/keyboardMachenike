@@ -25,7 +25,7 @@ export function Name() {
   export function DefaultPosition() {
 	return [10, 100];
   }
-  export function DefaultScale() {
+  export function DefaultScal() {
 	return 8.0;
   }
   /* global
